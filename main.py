@@ -27,7 +27,7 @@ class StudentData(BaseModel):
     name: str
     courses: List[Course]
 
-@app.post("/summary")
+@app.post("/score")
 async def summarize(data: StudentData):
     total_points = 0
     total_credits = 0
