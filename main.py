@@ -36,7 +36,8 @@ async def summarize(data: StudentData):
         total_points += grade_point * course.credits
         total_credits += course.credits
 
-    gpa = round(total_points / total_credits, 2) if total_credits > 0 else 0.0
+    gpa_raw = total_points / total_credits
+    gpa = round(gpa_raw + 1e-8, 2) 
 
     return {
         "student_summary": {
